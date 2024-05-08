@@ -1,6 +1,7 @@
 -- CUSTOM PLUGINS
 local batteryarc_widget = require("awesome-wm-widgets.batteryarc-widget.batteryarc")
 local brightness_widget = require("awesome-wm-widgets.brightness-widget.brightness")
+local volume_widget = require('awesome-wm-widgets.pactl-widget.volume')
 require("awesomewm-screenshot.screenshot")
 
 
@@ -261,7 +262,8 @@ awful.screen.connect_for_each_screen(function(s)
             layout = wibox.layout.fixed.horizontal,
 
             -- CUSTOM WIDGETS
-            brightness_widget(),
+            volume_widget{widget_type='arc'},
+            brightness_widget{program='xbacklight', timeout=1},
             batteryarc_widget(),
 
             mykeyboardlayout,
