@@ -80,7 +80,7 @@ beautiful.init("~/.config/awesome/default/theme.lua")
 -- editor = os.getenv("nvim") or "editor"
 
 -- CUSTOM TERMINAL + EDITOR
-terminal = "alacritty"
+terminal = "konsole"
 editor = "~/extra_applications/nvim.appimage"
 editor_cmd = terminal .. " -e " .. editor
 
@@ -318,7 +318,7 @@ globalkeys = gears.table.join(
 
     -- zoomer application
     awful.key({ modkey,           }, "=", function()
-        awful.util.spawn("~/.config/awesome/boomer/boomer") end),
+        awful.util.spawn("boomer") end),
 
     -- screenshots
     awful.key({ }, "Print", scrot_full,
@@ -681,6 +681,6 @@ client.connect_signal("focus", function(c) c.border_color = beautiful.border_foc
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
 
--- beautiful.useless_gap = 2
+beautiful.useless_gap = 2
 -- beautiful.gap_single_client = true
--- awful.spawn.with_shell("picom")
+awful.spawn.with_shell("picom --config /home/drew/.config/picom/picom.conf --transparent-clipping")
