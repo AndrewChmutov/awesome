@@ -300,10 +300,10 @@ globalkeys = gears.table.join(
     -- volume start
     awful.key({}, "XF86AudioLowerVolume", function()
         -- awful.spawn.with_shell("amixer sset Master 10%-")end),
-        awful.spawn.with_shell("pactl -- set-sink-volume 0 -10%")end),
+        awful.spawn.with_shell("pactl -- set-sink-volume @DEFAULT_SINK@ -10%")end),
     awful.key({}, "XF86AudioRaiseVolume", function()
         -- awful.spawn.with_shell("amixer sset Master 10%+")end),
-        awful.spawn.with_shell("pactl -- set-sink-volume 0 +10%")end),
+        awful.spawn.with_shell("pactl -- set-sink-volume @DEFAULT_SINK@ +10%")end),
     awful.key({}, "XF86AudioMute", function()
         -- awful.spawn.with_shell("amixer sset Master toggle")end),
         awful.spawn.with_shell("pactl set-sink-mute @DEFAULT_SINK@ toggle")end),
