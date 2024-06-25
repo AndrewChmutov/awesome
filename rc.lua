@@ -300,22 +300,23 @@ globalkeys = gears.table.join(
     -- volume start
     awful.key({}, "XF86AudioLowerVolume", function()
         -- awful.spawn.with_shell("amixer sset Master 10%-")end),
-        awful.spawn.with_shell("pactl -- set-sink-volume @DEFAULT_SINK@ -10%")end),
+        awful.spawn.with_shell("pactl -- set-sink-volume @DEFAULT_SINK@ -10%")end,
+        {description = "Decrease the volume", group = "control"}),
     awful.key({}, "XF86AudioRaiseVolume", function()
         -- awful.spawn.with_shell("amixer sset Master 10%+")end),
-        awful.spawn.with_shell("pactl -- set-sink-volume @DEFAULT_SINK@ +10%")end),
+        awful.spawn.with_shell("pactl -- set-sink-volume @DEFAULT_SINK@ +10%")end,
+        {description = "Increase the volume", group = "control"}),
     awful.key({}, "XF86AudioMute", function()
         -- awful.spawn.with_shell("amixer sset Master toggle")end),
-        awful.spawn.with_shell("pactl set-sink-mute @DEFAULT_SINK@ toggle")end),
+        awful.spawn.with_shell("pactl set-sink-mute @DEFAULT_SINK@ toggle")end,
+        {description = "Mute", group = "control"}),
     -- volume end
 
     -- brightness start
     awful.key({ }, "XF86MonBrightnessDown", function()
-        awful.util.spawn("xbacklight -dec 10") end),
-    awful.key({ }, "XF86MonBrightnessUp", function()
-        awful.util.spawn("xbacklight -inc 10") end),
+        awful.util.spawn("xbacklight -dec 10") end,
+        {description = "Increase the brightness", group = "control"}),
     -- brightness end
-
     -- zoomer application
     awful.key({ modkey,           }, "=", function()
         awful.util.spawn("boomer") end),
@@ -332,7 +333,7 @@ globalkeys = gears.table.join(
 
     awful.key({ modkey, "Ctrl" }, "l", function()
             awful.util.spawn("slock") end,
-        {description = "Take a screenshot of delay", group = "screenshot"}),
+        {description = "Lock the screen", group = "screen"}),
 
 
 
