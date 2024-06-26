@@ -315,6 +315,9 @@ globalkeys = gears.table.join(
     -- brightness start
     awful.key({ }, "XF86MonBrightnessDown", function()
         awful.util.spawn("xbacklight -dec 10") end,
+        {description = "Decrease the brightness", group = "control"}),
+    awful.key({ }, "XF86MonBrightnessUp", function()
+        awful.util.spawn("xbacklight -inc 10") end,
         {description = "Increase the brightness", group = "control"}),
     -- brightness end
     -- zoomer application
