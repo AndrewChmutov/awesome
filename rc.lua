@@ -75,6 +75,16 @@ end
 
 -- CUSTOM THEME
 beautiful.init("~/.config/awesome/default/theme.lua")
+--
+-- Notifications
+local rounded_rect_shape = function(cr, width, height)
+    gears.shape.rounded_rect(cr, width, height, 10) -- Adjust the corner radius
+end
+beautiful.notification_font = "JetBrainsMono Nerd Font"
+beautiful.notification_shape = rounded_rect_shape
+beautiful.notification_border_color = "#04b56b"
+
+
 
 -- This is used later as the default terminal and editor to run.
 -- editor = os.getenv("nvim") or "editor"
