@@ -20,7 +20,7 @@ local globalkeys = gears.table.join(
     awful.key({ "Ctrl"  },  "Print", scrot_delay),
 
     -- Lock screen
-    awful.key({ modkey, "Ctrl" }, "l", function() awful.util.spawn("slock") end),
+    awful.key({ modkey, "Ctrl" }, "l", function() awful.util.spawn("xsecurelock") end),
 
 
     -- Navigation (large scale)
